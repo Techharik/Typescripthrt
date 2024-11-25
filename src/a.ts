@@ -74,3 +74,40 @@ ages({
     lastname: 'prasath',
     age: 20
 });
+
+
+
+// difference between the interfaces and types.
+
+//syntax
+
+
+interface users {
+    name: string,
+    age: number,
+    greet: (name: string) => string
+}
+
+//we can implement this in the class 
+
+class EmployeeUser implements users {
+    name: string
+    age: number
+
+    constructor(name: string, age: number) {
+        this.name = name,
+            this.age = age
+    }
+
+    greet(name: string) {
+        return 'Hello welcome' + name
+    }
+
+}
+
+//types do little extras not implemente din class you can see a = in sytax
+
+type user2 = {
+    name: string,
+    age: number
+}
