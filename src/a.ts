@@ -149,3 +149,13 @@ const cbf: (string | number | boolean)[] = ['sa', 2, true]
 type typecbf = (string | number | boolean)
 
 const cbf1: typecbf[] = ['s']
+
+//generics - can be anything
+
+function create<T>(a: T[]): T {
+    return a;
+}
+
+const created1 = create<string>(['a']);
+
+// created1.toLocaleLowerCase()
