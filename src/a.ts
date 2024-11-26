@@ -85,6 +85,7 @@ ages({
 interface users {
     name: string,
     age: number,
+    call?: string | number
     greet: (name: string) => string
 }
 
@@ -93,10 +94,11 @@ interface users {
 class EmployeeUser implements users {
     name: string
     age: number
-
-    constructor(name: string, age: number) {
+    call: number
+    constructor(name: string, age: number, call: number) {
         this.name = name,
             this.age = age
+        this.call = call
     }
 
     greet(name: string) {
@@ -111,3 +113,39 @@ type user2 = {
     name: string,
     age: number
 }
+
+// unions.
+
+let namess: string | number = 'hi';
+// or 
+type nameoffuntion = string | number;
+
+let namesss: nameoffuntion = 'hi';
+
+
+//intersections = & combination of both types.
+//enums in ts
+
+enum moveMent {
+    Up, //default value is 0  - you can assign one value as number example 10 , other follow inc of 1 , or string 
+    down,
+    left,
+    right,
+}
+
+//generics in ts 
+
+//defaining an array
+
+const c: Array<string> = ['lk'] //or
+const cb: string[] = ['s']
+
+
+//if it is a mixed array  - string , number , boolean
+
+const cbf: (string | number | boolean)[] = ['sa', 2, true]
+//or - use types
+
+type typecbf = (string | number | boolean)
+
+const cbf1: typecbf[] = ['s']
